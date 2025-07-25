@@ -1,0 +1,12 @@
+# Requirements for Academic Planner & Timetable Generator
+
+# Backend
+PHP >= 7.4
+PDO extension (for MySQL)
+MySQL >= 5.7
+
+# Frontend (via CDN)
+Bootstrap 5.x
+FontAwesome 6.x
+FullCalendar.js 6.x
+jsPDF 2.x 
