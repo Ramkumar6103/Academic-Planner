@@ -7,6 +7,12 @@ $pdo = require __DIR__ . '/config/db.php';
 $message = '';
 $message_type = '';
 
+// Check for logout message
+if (isset($_GET['message'])) {
+    $message = $_GET['message'];
+    $message_type = 'success';
+}
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = trim($_POST['email'] ?? '');
     $password = $_POST['password'] ?? '';

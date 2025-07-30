@@ -51,7 +51,15 @@ $seating_row = $seating->fetch();
 </head>
 <body>
 <div class="container py-4">
-    <h1 class="mb-4">Student Dashboard</h1>
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1>Student Dashboard</h1>
+        <div>
+            <span class="me-3">Welcome, <?= htmlspecialchars($_SESSION['username']) ?></span>
+            <a href="logout.php" class="btn btn-outline-danger">
+                <i class="fa-solid fa-sign-out-alt me-2"></i>Logout
+            </a>
+        </div>
+    </div>
     <ul class="nav nav-tabs mb-4" id="dashboardTabs" role="tablist">
         <li class="nav-item" role="presentation">
             <button class="nav-link active" id="timetable-tab" data-bs-toggle="tab" data-bs-target="#timetable" type="button" role="tab">Timetable</button>

@@ -39,6 +39,33 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 try {
                     $stmt = $pdo->prepare('INSERT INTO users (username, password, email, role_id) VALUES (?, ?, ?, ?)');
                     $stmt->execute([$name, $hashedPassword, $email, $role_id]);
+                    $user_id = $pdo->lastInsertId();
+                    
+                    // If registering as Student, create student record
+                    if ($role === 'Student') {
+                        // Get default department (first department)
+                        $dept_stmt = $pdo->query('SELECT id FROM departments LIMIT 1');
+                        $dept = $dept_stmt->fetch();
+                        $department_id = $dept ? $dept['id'] : 1;
+                        
+                        // Generate register number (you can modify this logic)
+                        $register_number = 'STU' . date('Y') . str_pad($user_id, 4, '0', STR_PAD_LEFT);
+                        
+                        $stmt = $pdo->prepare('INSERT INTO students (user_id, department_id, register_number, name) VALUES (?, ?, ?, ?)');
+                        $stmt->execute([$user_id, $department_id, $register_number, $name]);
+                    }
+                    
+                    // If registering as Faculty, create faculty record
+                    if ($role === 'Faculty') {
+                        // Get default department (first department)
+                        $dept_stmt = $pdo->query('SELECT id FROM departments LIMIT 1');
+                        $dept = $dept_stmt->fetch();
+                        $department_id = $dept ? $dept['id'] : 1;
+                        
+                        $stmt = $pdo->prepare('INSERT INTO faculty (user_id, department_id, name) VALUES (?, ?, ?)');
+                        $stmt->execute([$user_id, $department_id, $name]);
+                    }
+                    
                     $message = 'Registration successful! You can now login.';
                     $message_type = 'success';
                 } catch (PDOException $e) {

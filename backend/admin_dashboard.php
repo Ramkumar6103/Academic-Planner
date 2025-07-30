@@ -100,7 +100,15 @@ $faculty_availability = $pdo->query('SELECT fa.*, f.name as faculty_name FROM fa
 </head>
 <body>
 <div class="container py-4">
-    <h1 class="mb-4">Admin Dashboard</h1>
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1>Admin Dashboard</h1>
+        <div>
+            <span class="me-3">Welcome, <?= htmlspecialchars($_SESSION['username']) ?></span>
+            <a href="logout.php" class="btn btn-outline-danger">
+                <i class="fa-solid fa-sign-out-alt me-2"></i>Logout
+            </a>
+        </div>
+    </div>
     <?php foreach ($messages as $msg): ?>
         <div class="alert alert-<?= $msg['type'] ?> alert-dismissible fade show" role="alert">
             <?= htmlspecialchars($msg['text']) ?>
