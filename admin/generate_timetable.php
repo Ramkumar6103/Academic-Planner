@@ -98,7 +98,7 @@ if ($selected_class) {
                 <li><a href="generate_timetable.php" class="active">Timetable</a></li>
                 <li><a href="generate_exam_seating.php">Exam Seating</a></li>
                 <li><a href="manage_events.php">Events</a></li>
-                <li><a href="manage_attendance.php">Attendance</a></li>
+                <!-- <li><a href="manage_attendance.php">Attendance</a></li> -->
             </ul>
         </div>
     </nav>

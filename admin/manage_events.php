@@ -98,7 +98,7 @@ $events = $stmt->fetchAll();
                 <li><a href="generate_timetable.php">Timetable</a></li>
                 <li><a href="generate_exam_seating.php">Exam Seating</a></li>
                 <li><a href="manage_events.php" class="active">Events</a></li>
-                <li><a href="manage_attendance.php">Attendance</a></li>
+                <!-- <li><a href="manage_attendance.php">Attendance</a></li> -->
             </ul>
         </div>
     </nav>

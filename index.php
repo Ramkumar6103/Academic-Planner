@@ -51,10 +51,10 @@ if ($_POST) {
             <button type="submit" class="btn" style="width: 100%;">Login</button>
             
             <div style="margin-top: 1rem; text-align: center; font-size: 0.9rem; color: #666;">
-                <p><strong>Demo Credentials:</strong></p>
+                <!-- <p><strong>Demo Credentials:</strong></p>
                 <p>Admin: admin@college.edu / password</p>
                 <p>Faculty: faculty@college.edu / password</p>
-                <p>Student: student@college.edu / password</p>
+                <p>Student: student@college.edu / password</p> -->
             </div>
         </form>
     </div>

@@ -138,7 +138,7 @@ if ($selected_date) {
                 <li><a href="generate_timetable.php">Timetable</a></li>
                 <li><a href="generate_exam_seating.php" class="active">Exam Seating</a></li>
                 <li><a href="manage_events.php">Events</a></li>
-                <li><a href="manage_attendance.php">Attendance</a></li>
+                <!-- <li><a href="manage_attendance.php">Attendance</a></li> -->
             </ul>
         </div>
     </nav>
